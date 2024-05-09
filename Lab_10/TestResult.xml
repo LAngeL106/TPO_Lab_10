@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" runstate="Runnable" testcasecount="5" result="Failed" total="5" passed="0" failed="5" warnings="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.16.3.0" clr-version="4.0.30319.42000" start-time="2024-04-30 12:42:00Z" end-time="2024-04-30 12:42:01Z" duration="0.448587">
+  <command-line><![CDATA[C:\Users\Lenovo\.nuget\packages\nunit.consolerunner\3.16.3\tools\nunit3-console.exe  C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\bin\Debug\net7.0\Lab10.dll]]></command-line>
+  <test-suite type="Assembly" id="1-1006" name="Lab10.dll" fullname="C:/ProgramData/Jenkins/.jenkins/workspace/Lab_10/Lab_10/PageObject/bin/Debug/net7.0/Lab10.dll" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2024-04-30T12:42:00.9953293Z" end-time="2024-04-30T12:42:01.0393851Z" duration="0.043980" total="5" passed="0" failed="5" warnings="0" inconclusive="0" skipped="0" asserts="0">
+    <environment framework-version="3.13.3.0" clr-version="7.0.16" os-version="Microsoft Windows 10.0.22621" platform="Win32NT" cwd="C:\Учёба БГТУ\3 курс\6 семестр\Лабораторные\Тестирование программного обеспечения\Lab_10" machine-name="NIKITA" user="Lenovo" user-domain="NIKITA" culture="ru-RU" uiculture="ru-RU" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="C:\Учёба БГТУ\3 курс\6 семестр\Лабораторные\Тестирование программного обеспечения\Lab_10" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETCoreApp,Version=v7.0" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="TargetRuntimeFramework" value="netcore-7.0" />
+      <setting name="NumberOfTestWorkers" value="12" />
+    </settings>
+    <properties>
+      <property name="_PID" value="32732" />
+      <property name="_APPDOMAIN" value="nunit-agent" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="TestSuite" id="1-1007" name="Lab10" fullname="Lab10" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2024-04-30T12:42:01.0001506Z" end-time="2024-04-30T12:42:01.0393757Z" duration="0.039225" total="5" passed="0" failed="5" warnings="0" inconclusive="0" skipped="0" asserts="0">
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1-1000" name="KufarTests" fullname="Lab10.KufarTests" classname="Lab10.KufarTests" runstate="Runnable" testcasecount="5" result="Failed" site="Child" start-time="2024-04-30T12:42:01.0016418Z" end-time="2024-04-30T12:42:01.0389761Z" duration="0.037334" total="5" passed="0" failed="5" warnings="0" inconclusive="0" skipped="0" asserts="0">
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1-1004" name="AddItemToBusket" fullname="Lab10.KufarTests.AddItemToBusket" methodname="AddItemToBusket" classname="Lab10.KufarTests" runstate="Runnable" seed="800228254" result="Failed" label="Error" start-time="2024-04-30T12:42:01.0040024Z" end-time="2024-04-30T12:42:01.0338717Z" duration="0.029938" asserts="0">
+          <failure>
+            <message><![CDATA[OpenQA.Selenium.NoSuchDriverException : Unable to obtain MicrosoftEdge using Selenium Manager; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+  ----> System.TypeInitializationException : The type initializer for 'OpenQA.Selenium.SeleniumManager' threw an exception.
+  ----> OpenQA.Selenium.WebDriverException : Unable to locate or obtain Selenium Manager binary at C:\Users\Lenovo\.nuget\packages\nunit.consolerunner\3.16.3\tools\agents\net7.0\selenium-manager\windows\selenium-manager.exe
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+            <stack-trace><![CDATA[   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+   at OpenQA.Selenium.Chromium.ChromiumDriver.GenerateDriverServiceCommandExecutor(DriverService service, DriverOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor()
+   at Lab10.KufarTests.Init() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 34
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+--TypeInitializationException
+   at OpenQA.Selenium.SeleniumManager.DriverPath(DriverOptions options)
+   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+--WebDriverException
+   at OpenQA.Selenium.SeleniumManager..cctor()
+--TearDown
+   at Lab10.KufarTests.Cleanup() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 49
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1-1003" name="AddItemToFavorite" fullname="Lab10.KufarTests.AddItemToFavorite" methodname="AddItemToFavorite" classname="Lab10.KufarTests" runstate="Runnable" seed="195526240" result="Failed" label="Error" start-time="2024-04-30T12:42:01.0356990Z" end-time="2024-04-30T12:42:01.0366632Z" duration="0.000964" asserts="0">
+          <failure>
+            <message><![CDATA[OpenQA.Selenium.NoSuchDriverException : Unable to obtain MicrosoftEdge using Selenium Manager; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+  ----> System.TypeInitializationException : The type initializer for 'OpenQA.Selenium.SeleniumManager' threw an exception.
+  ----> OpenQA.Selenium.WebDriverException : Unable to locate or obtain Selenium Manager binary at C:\Users\Lenovo\.nuget\packages\nunit.consolerunner\3.16.3\tools\agents\net7.0\selenium-manager\windows\selenium-manager.exe
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+            <stack-trace><![CDATA[   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+   at OpenQA.Selenium.Chromium.ChromiumDriver.GenerateDriverServiceCommandExecutor(DriverService service, DriverOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor()
+   at Lab10.KufarTests.Init() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 34
+   at InvokeStub_KufarTests.Init(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+--TypeInitializationException
+   at OpenQA.Selenium.SeleniumManager.DriverPath(DriverOptions options)
+   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+--WebDriverException
+   at OpenQA.Selenium.SeleniumManager..cctor()
+--TearDown
+   at Lab10.KufarTests.Cleanup() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 49
+   at InvokeStub_KufarTests.Cleanup(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1-1005" name="CheckingTheLowerThresholdForTheNumberOfCharactersInTheDescriptionFieldInAd" fullname="Lab10.KufarTests.CheckingTheLowerThresholdForTheNumberOfCharactersInTheDescriptionFieldInAd" methodname="CheckingTheLowerThresholdForTheNumberOfCharactersInTheDescriptionFieldInAd" classname="Lab10.KufarTests" runstate="Runnable" seed="2120950606" result="Failed" label="Error" start-time="2024-04-30T12:42:01.0367015Z" end-time="2024-04-30T12:42:01.0371750Z" duration="0.000474" asserts="0">
+          <failure>
+            <message><![CDATA[OpenQA.Selenium.NoSuchDriverException : Unable to obtain MicrosoftEdge using Selenium Manager; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+  ----> System.TypeInitializationException : The type initializer for 'OpenQA.Selenium.SeleniumManager' threw an exception.
+  ----> OpenQA.Selenium.WebDriverException : Unable to locate or obtain Selenium Manager binary at C:\Users\Lenovo\.nuget\packages\nunit.consolerunner\3.16.3\tools\agents\net7.0\selenium-manager\windows\selenium-manager.exe
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+            <stack-trace><![CDATA[   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+   at OpenQA.Selenium.Chromium.ChromiumDriver.GenerateDriverServiceCommandExecutor(DriverService service, DriverOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor()
+   at Lab10.KufarTests.Init() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 34
+   at InvokeStub_KufarTests.Init(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+--TypeInitializationException
+   at OpenQA.Selenium.SeleniumManager.DriverPath(DriverOptions options)
+   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+--WebDriverException
+   at OpenQA.Selenium.SeleniumManager..cctor()
+--TearDown
+   at Lab10.KufarTests.Cleanup() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 49
+   at InvokeStub_KufarTests.Cleanup(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1-1002" name="EnteringIncorrectDateOfBirthInProfile" fullname="Lab10.KufarTests.EnteringIncorrectDateOfBirthInProfile" methodname="EnteringIncorrectDateOfBirthInProfile" classname="Lab10.KufarTests" runstate="Runnable" seed="1920003164" result="Failed" label="Error" start-time="2024-04-30T12:42:01.0371867Z" end-time="2024-04-30T12:42:01.0375958Z" duration="0.000409" asserts="0">
+          <failure>
+            <message><![CDATA[OpenQA.Selenium.NoSuchDriverException : Unable to obtain MicrosoftEdge using Selenium Manager; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+  ----> System.TypeInitializationException : The type initializer for 'OpenQA.Selenium.SeleniumManager' threw an exception.
+  ----> OpenQA.Selenium.WebDriverException : Unable to locate or obtain Selenium Manager binary at C:\Users\Lenovo\.nuget\packages\nunit.consolerunner\3.16.3\tools\agents\net7.0\selenium-manager\windows\selenium-manager.exe
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+            <stack-trace><![CDATA[   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+   at OpenQA.Selenium.Chromium.ChromiumDriver.GenerateDriverServiceCommandExecutor(DriverService service, DriverOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor()
+   at Lab10.KufarTests.Init() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 34
+   at InvokeStub_KufarTests.Init(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+--TypeInitializationException
+   at OpenQA.Selenium.SeleniumManager.DriverPath(DriverOptions options)
+   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+--WebDriverException
+   at OpenQA.Selenium.SeleniumManager..cctor()
+--TearDown
+   at Lab10.KufarTests.Cleanup() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 49
+   at InvokeStub_KufarTests.Cleanup(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1-1001" name="EnteringSpecialCharactersInTheUserName" fullname="Lab10.KufarTests.EnteringSpecialCharactersInTheUserName" methodname="EnteringSpecialCharactersInTheUserName" classname="Lab10.KufarTests" runstate="Runnable" seed="1058312909" result="Failed" label="Error" start-time="2024-04-30T12:42:01.0376059Z" end-time="2024-04-30T12:42:01.0380342Z" duration="0.000428" asserts="0">
+          <failure>
+            <message><![CDATA[OpenQA.Selenium.NoSuchDriverException : Unable to obtain MicrosoftEdge using Selenium Manager; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+  ----> System.TypeInitializationException : The type initializer for 'OpenQA.Selenium.SeleniumManager' threw an exception.
+  ----> OpenQA.Selenium.WebDriverException : Unable to locate or obtain Selenium Manager binary at C:\Users\Lenovo\.nuget\packages\nunit.consolerunner\3.16.3\tools\agents\net7.0\selenium-manager\windows\selenium-manager.exe
+TearDown : System.NullReferenceException : Object reference not set to an instance of an object.]]></message>
+            <stack-trace><![CDATA[   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+   at OpenQA.Selenium.Chromium.ChromiumDriver.GenerateDriverServiceCommandExecutor(DriverService service, DriverOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Chromium.ChromiumDriver..ctor(ChromiumDriverService service, ChromiumOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options, TimeSpan commandTimeout)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeDriverService service, EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor(EdgeOptions options)
+   at OpenQA.Selenium.Edge.EdgeDriver..ctor()
+   at Lab10.KufarTests.Init() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 34
+   at InvokeStub_KufarTests.Init(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)
+--TypeInitializationException
+   at OpenQA.Selenium.SeleniumManager.DriverPath(DriverOptions options)
+   at OpenQA.Selenium.DriverFinder.FullPath(DriverOptions options)
+--WebDriverException
+   at OpenQA.Selenium.SeleniumManager..cctor()
+--TearDown
+   at Lab10.KufarTests.Cleanup() in C:\ProgramData\Jenkins\.jenkins\workspace\Lab_10\Lab_10\PageObject\Tests\KufarTests.cs:line 49
+   at InvokeStub_KufarTests.Cleanup(Object, Object, IntPtr*)
+   at System.Reflection.MethodInvoker.Invoke(Object obj, IntPtr* args, BindingFlags invokeAttr)]]></stack-trace>
+          </failure>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
