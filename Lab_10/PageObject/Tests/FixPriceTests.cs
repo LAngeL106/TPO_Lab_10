@@ -13,6 +13,8 @@ namespace Lab10
         FavoritesPage favoritesPage;
         CartPage cartPage;
         KufarMarketPage kufarMarketPage;
+        SearchPage searchPage;
+        ProfileSettingsPage profileSettingsPage;
 
         Data data;
         string? productName;
@@ -37,6 +39,8 @@ namespace Lab10
             favoritesPage = new FavoritesPage(driver);
             cartPage = new CartPage(driver);
             kufarMarketPage = new KufarMarketPage(driver);
+            searchPage = new SearchPage(driver);
+            profileSettingsPage = new ProfileSettingsPage(driver);
         }
 
         [TearDown]
@@ -67,5 +71,25 @@ namespace Lab10
             Assert.IsTrue(cartPage.GetBusketProductName() == productName);
         }
 
+        [Test]
+        public void SearchingProductsByEnteringStringInSearchEngine()
+        {
+            fixPricePage.GoToMainPage();
+            fixPricePage.ClosingPolicyAndAdvertisingWindows();
+            fixPricePage.ClickSearchField();
+            fixPricePage.EnteringValueInSearchEngine();
+            fixPricePage.ClickButtonSearch();
+            Assert.IsTrue(searchPage.GetSearchResult().Contains(data.searchString));
+        }
+
+        [Test]
+        public void DisableNotifications()
+        {
+            fixPricePage.GoToMainPage();
+            fixPricePage.AuthorizeUser(user, loginPage);
+            fixPricePage.ClickProfileSettings();
+            string[] arr = profileSettingsPage.FindAndDisableNotificationsSettings();
+            Assert.IsTrue(!arr[0].Contains("btn on") && !arr[1].Contains("btn on"));
+        }
     }
 }

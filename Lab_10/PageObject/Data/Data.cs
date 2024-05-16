@@ -10,5 +10,6 @@
         public string badBirthDate = "23.02.2025";
         public string login = "293977855";
         public string password = "1234ASqwe";
+        public string searchString = "Еда";
     }
 }

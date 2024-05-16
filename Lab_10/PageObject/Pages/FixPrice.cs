@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 
@@ -12,14 +13,12 @@ namespace Lab10
         private readonly By _firstAdButton = By.XPath("//div[@id='modal']/div");
         private readonly By _secondAdButton = By.XPath("//*[text()='Закрыть']");
         private readonly By _signInButton = By.XPath("//*[text()='Войти']");
-        private readonly By _profileIconButton = By.XPath("//div[@data-testid='user_profile_pic']/span/span");
-        private readonly By _profileSettingsButton = By.XPath("//*[text()='Настройки']");
+        private readonly By _profileSettingsButton = By.XPath("//*[@id=\"app-header\"]/header/div/div/div[2]/div[6]/div/div/nav/a[4]/div");
         private readonly By _profileFavoritesButton = By.XPath("//*[text()='Избранное']");
         //private readonly By _firstProductCard = By.XPath("//div[@class='slider']/div/div/div/div");
         private readonly By _firstProductCard = By.XPath("//*[text()='В корзину']");
         private readonly By _firstProductCardName = By.XPath("//div[@class='slider']/div/div/div/div/div[3]/div/div/a");
         private readonly By _likeButton = By.XPath("//*[text()='В избранное']");
-        private readonly By _kufarMarketCheckbox = By.XPath("//p[text()='Товары от Куфар Маркета']");
         private readonly By _showAnnouncementsButton = By.XPath("//button[@data-name='filter-submit-button']");
         private readonly By _placeAnAdButton = By.XPath("//div[@data-name='add-item-button']");
         private readonly By _acceptAllCookiesButton = By.XPath("//button[text()='Принять все файлы cookie']");
@@ -28,6 +27,10 @@ namespace Lab10
         private readonly By _chooseFavoriteAdressButton = By.XPath("//button[text()='Выбрать']");
         private readonly By _productModalWindow = By.XPath("//div[@id='modal']/div/button[@class='close']");
         private readonly By _goToCartIcon = By.XPath("//div[contains(@class, 'categories-wrapper') and contains(@class, 'categories')]/a[2]/div[contains(@class, 'icon-wrapper size-small')]");
+        private readonly By _searchField = By.XPath("//*[@id=\"app-header\"]/header/div/div/div[2]/div[4]/div[2]/form/input\r\n");
+        private readonly By _inputSearchField = By.XPath("//*[@id=\"app-header\"]/header/div/div/div[2]/div[4]/div[2]/form/input\r\n");
+        private readonly By _searchButton = By.XPath("//*[@id='app-header']/header/div/div/div[2]/div[4]/div[2]/form/a/i");
+        private readonly By _profileButton = By.XPath("//*[@id=\"app-header\"]/header/div/div/div[2]/div[6]/div/a/span");
 
 
 
@@ -57,12 +60,6 @@ namespace Lab10
             acceptButton.Click();
         }
         
-        public void ClickProfileIcon()
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementIsVisible(_profileIconButton));
-            driver.FindElement(_profileIconButton).Click();
-        }
 
         public string GetBirthDateError()
         {
@@ -127,13 +124,6 @@ namespace Lab10
             wait.Until(ExpectedConditions.ElementIsVisible(_likeButton));
             driver.FindElement(_likeButton).Click();
         }
-        public void TickKufarMarket()
-        {
-            ((IJavaScriptExecutor)driver).ExecuteScript("window.scrollBy(0, 300);");
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementIsVisible(_kufarMarketCheckbox));
-            driver.FindElement(_kufarMarketCheckbox).Click();
-        }
         public void ShowAnnouncements()
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -141,17 +131,16 @@ namespace Lab10
             driver.FindElement(_showAnnouncementsButton).Click();
         }
         
-        public void PlaceAnAd()
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementIsVisible(_placeAnAdButton));
-            driver.FindElement(_placeAnAdButton).Click();
-        }
         public void ClickProfileSettings()
         {
+            Actions actions = new Actions(driver);
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(_profileButton));
+            IWebElement menu = driver.FindElement(_profileButton);
+            actions.MoveToElement(menu).Perform();
             wait.Until(ExpectedConditions.ElementIsVisible(_profileSettingsButton));
-            driver.FindElement(_profileSettingsButton).Click();
+            IWebElement submenu = driver.FindElement(_profileSettingsButton);
+            actions.MoveToElement(submenu).Click().Perform();
         }
         
         public void ClickProfileFavorites()
@@ -169,6 +158,27 @@ namespace Lab10
             wait.Until(ExpectedConditions.ElementIsVisible(_signInButton));
             driver.FindElement(_signInButton).Click();
         }
-        
+
+        public void ClickSearchField()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(_searchField));
+            driver.FindElement(_searchField).Click();
+        }
+
+        public void EnteringValueInSearchEngine()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(_inputSearchField));
+            driver.FindElement(_inputSearchField).SendKeys(data.searchString);
+        }
+
+        public void ClickButtonSearch()
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(_searchButton));
+            driver.FindElement(_searchButton).Click();
+        }
+
     }
 }
